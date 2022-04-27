@@ -1,0 +1,24 @@
+{
+  "name": "fortune-cookie-generator",
+  "version": "0.9.0",
+  "description": "Fetch fortune cookies from the Digital Fortune Cookies API",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elitezen/fortune-cookie-generator.git"
+  },
+  "author": "Elitezen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elitezen/fortune-cookie-generator/issues"
+  },
+  "homepage": "https://github.com/Elitezen/fortune-cookie-generator#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
+}
