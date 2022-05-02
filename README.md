@@ -14,7 +14,7 @@ getFortune()
 
 ## Example Result
 
-```json
+```
 {
   fortune: 'A very attractive person has a message for you.',
   luckyNumbers: [ 52, 6, 33, 78, 97, 39 ]
@@ -29,7 +29,7 @@ getFortune(10)
   .then(console.log);
 ```
 
-```json
+```
 [
   {
     fortune: 'Emotion is energy in motion.',
