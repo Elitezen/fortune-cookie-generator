@@ -13,15 +13,11 @@ async function getFortune(amount = 1) {
     const data = await response.json();
     if (!data.success) throw data.message;
 
-    return (data?.cookie || data.cookies);
+    return multiFortuneRequest ? data.cookies : data.cookie;
   } catch (err) {
     throw new TypeError(err);
   }
 }
-
-getFortune(10)
-  .then(console.log)
-  .catch(console.error);
 
 export {
   getFortune
