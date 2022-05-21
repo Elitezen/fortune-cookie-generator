@@ -1,7 +1,10 @@
 # Fortune Cookie Generator
-Get fortune cookies from the [Digital Fortune Cookies API](https://github.com/Elitezen/digital-fortune-cookies-api). Cookies include a fortune and 6 lucky numbers!
+Fetch fortune cookies from the [Digital Fortune Cookies API](https://github.com/Elitezen/digital-fortune-cookies-api). Cookies include a fortune and 6 lucky numbers!
 
 Results are typed.
+
+# 1.1.0
+Broke function into 2 individual functions, one for a single fortune and one for 1 - 10 fortunes (returns array regardless of size).
 
 ## Example Code
 
@@ -23,9 +26,9 @@ getFortune()
 
 ## Request Up To 10 Tokens at a Time
 ```js
-import { getFortune } from 'fortune-cookie-generator';
+import { getFortunes } from 'fortune-cookie-generator';
 
-getFortune(10)
+getFortunes(10)
   .then(console.log);
 ```
 
@@ -74,3 +77,13 @@ getFortune(10)
 ]
 ```
 
+# Documentation
+## Interfaces
+### FortuneCookie
+
+```ts
+interface FortuneCookie {
+  fortune: string;
+  luckyNumbers: [number, number, number, number, number, number];
+}
+```

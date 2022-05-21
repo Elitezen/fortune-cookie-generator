@@ -1,6 +1,11 @@
 import fetch from 'node-fetch';
 
-async function getFortune(amount = 1) {
+/**
+ * Fetches an array of 1 to 10 fortunes.
+ * @param {number} amount The number of cookies to fetch.
+ * @returns {Promise<FortuneCookie[]>} The fortune cookies.
+ */
+async function getFortunes(amount = 1) {
   try {
     const multiFortuneRequest = amount > 1;
     const url = multiFortuneRequest 
@@ -13,12 +18,21 @@ async function getFortune(amount = 1) {
     const data = await response.json();
     if (!data.success) throw data.message;
 
-    return multiFortuneRequest ? data.cookies : data.cookie;
+    return multiFortuneRequest ? [...data.cookies] : [data.cookie];
   } catch (err) {
     throw new TypeError(err);
   }
 }
 
+/**
+ * Fetches a single fortune cookie.
+ * @returns {Promise<FortuneCookie>} The fortune cookie.
+ */
+async function getFortune() {
+  return (await getFortunes(1))[0];
+}
+
 export {
-  getFortune
+  getFortune,
+  getFortunes
 }

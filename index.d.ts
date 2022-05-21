@@ -4,6 +4,6 @@ declare module 'fortune-cookie-generator' {
     luckyNumbers: [number, number, number, number, number, number];
   }
   
-  function _request(url: string, amount:number): Promise<unknown>;
-  function getFortune(amount?: number): Promise<FortuneCookie> | Promise<FortuneCookie[]>;
+  function getFortune(): Promise<FortuneCookie>;
+  function getFortunes(amount?: number): Promise<FortuneCookie[]>;
 }
